@@ -10,7 +10,7 @@ tamanho_max_arquivo = 54.50 * 1024 * 1024
 # Lista para armazenar os tamanhos de cada arquivo
 tamanhos_arquivos = []
 
-# Preencher a lista com tamanhos aleatórios até atingir ou ultrapassar o tamanho total
+# Preencher a lista com tamanhos aleatórios até atingir o tamanho total
 tamanho_atual = 0
 while tamanho_atual < tamanho_total:
     # Calcular o tamanho máximo permitido para o próximo arquivo
