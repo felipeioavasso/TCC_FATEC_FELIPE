@@ -13,9 +13,9 @@ tamanhos_arquivos = []
 # Preencher a lista com tamanhos aleatórios até atingir ou ultrapassar o tamanho total
 tamanho_atual = 0
 while tamanho_atual < tamanho_total:
-    tamanho_arquivo = random.randint(1, int(tamanho_max_arquivo))  # Tamanho aleatório entre 1 byte e o máximo permitido
-    if tamanho_atual + tamanho_arquivo > tamanho_total:
-        tamanho_arquivo = tamanho_total - tamanho_atual  # Ajustar o último arquivo para que o total seja exatamente 2 GB
+    # Calcular o tamanho máximo permitido para o próximo arquivo
+    tamanho_max_permitido = min(tamanho_total - tamanho_atual, tamanho_max_arquivo)
+    tamanho_arquivo = random.randint(1, int(tamanho_max_permitido))  # Tamanho aleatório entre 1 byte e o máximo permitido
     tamanhos_arquivos.append(tamanho_arquivo)
     tamanho_atual += tamanho_arquivo
 
@@ -34,4 +34,4 @@ for i, tamanho_arquivo in enumerate(tamanhos_arquivos):
 
     print(f"Arquivo {nome_arquivo} gerado com sucesso.")
 
-print("Todos os arquivos foram gerados com sucesso!")
+print(f"Total de {len(tamanhos_arquivos)} arquivos gerados com sucesso!")
